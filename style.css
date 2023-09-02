@@ -1,0 +1,21 @@
+h1 {
+    color: rgb(30, 210, 84);
+    font-size: 70px;
+    margin: 0px;
+    background-color: aqua;
+    text-align: center;
+}
+.Red {
+    color: rgb(113, 18, 236);
+    font-size: 80px;
+    margin: 10px;
+    background-color: rgb(64, 235, 21);
+    text-align: right;
+}
+button {
+    color: rgb(113, 18, 236);
+    font-size: 80px;
+    margin: 10px;
+    background-color: rgb(64, 235, 21);
+    text-align: right;
+}
