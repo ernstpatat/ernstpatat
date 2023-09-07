@@ -4,10 +4,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Movement Controls</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
     </head>
     <body>
-        <canvas id="canvas" syle="display:none" width="1800px" height="500px"></canvas>
+        <canvas id="canvas" width="1800px" height="500px"></canvas>
         <button type='submit' onclick="Start()" id="button">Start Game</button>
+        <button type='submit' onclick="Pause()" id="buttonPause">Pause Game</button>
+        <button type='submit' onclick="UnPause()" id="buttonUnPause">Unpause Game</button>
         <h1> Your Score: <span id="score"></span></h1>
     </body>
     <script src="app.js"></script>
