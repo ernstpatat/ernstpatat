@@ -61,7 +61,8 @@ function update() {
     if (Cactusx <= x) if (x <= Cactusx + 50) if (Cactusy <= y + 100) if (y + 50 <= Cactusy + 100) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, y = canvas.height - 100, document.getElementById("LoseText").innerHTML = "You Lose!", update()
     Cactusx -= CactusSpeed
     ScoreString = Score.toString()
-    if (Score >= 10) if (ScoreString.charAt(1) == 0) CactusSpeed = ScoreString.charAt(0) - ScoreString.charAt(1) / 10 + 4
+    if (Score  <= 99) if (Score >= 10) if (ScoreString.charAt(1) == 0) CactusSpeed = parseInt(ScoreString.charAt(0)) + 4
+    if (Score >= 100) if (ScoreString.charAt(2) == 0) CactusSpeed = parseInt(ScoreString.charAt(1)) + 14
     if (Dead == true) if (Dead2 == false) Dead2 = true, requestAnimationFrame(update)
     if (Dead == false) if (Paused == false) {
     requestAnimationFrame(update)
