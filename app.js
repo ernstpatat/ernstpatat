@@ -15,6 +15,7 @@ Paused = false
 buttonPause.disabled = true
 buttonUnPause.disabled = true
 CactusSpeed = 4
+HighScore = 0
 
 function Pause() {
     buttonPause.disabled = true
@@ -46,10 +47,11 @@ function update() {
     ctx.fillRect(Cactusx, Cactusy, 50, 50)
     if (Cactusx <= -50) Cactusx = canvas.width, Score += 1
     document.getElementById("score").innerHTML = Score
-    if (Cactusx <= x) if (x <= Cactusx + 50) if (Cactusy <= y + 50) if (y + 50 <= Cactusy + 50) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true
-    if (Cactusx <= x + 50) if (x + 50 <= Cactusx + 50) if (Cactusy <= y + 100) if (y + 50 <= Cactusy + 100) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true
-    if (Cactusx <= x + 50) if (x + 50 <= Cactusx + 50) if (Cactusy <= y + 50) if (y + 50 <= Cactusy + 50) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true
-    if (Cactusx <= x) if (x <= Cactusx + 50) if (Cactusy <= y + 100) if (y + 50 <= Cactusy + 100) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true
+    document.getElementById("HighScore").innerHTML = HighScore
+    if (Cactusx <= x) if (x <= Cactusx + 50) if (Cactusy <= y + 50) if (y + 50 <= Cactusy + 50) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, HighScore = Score
+    if (Cactusx <= x + 50) if (x + 50 <= Cactusx + 50) if (Cactusy <= y + 100) if (y + 50 <= Cactusy + 100) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, HighScore = Score
+    if (Cactusx <= x + 50) if (x + 50 <= Cactusx + 50) if (Cactusy <= y + 50) if (y + 50 <= Cactusy + 50) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, HighScore = Score
+    if (Cactusx <= x) if (x <= Cactusx + 50) if (Cactusy <= y + 100) if (y + 50 <= Cactusy + 100) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, HighScore = Score
     Cactusx -= CactusSpeed
     ScoreString = Score.toString()
     if (Score >= 10) if (ScoreString.charAt(1) == 0) CactusSpeed = ScoreString.charAt(0) - ScoreString.charAt(1) / 10 + 4
