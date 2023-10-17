@@ -1,4 +1,15 @@
 addEventListener("keydown", function(e){
-    if (grounded == true) if (e.code == "Space") vy = -9, grounded = false
+    if (grounded == true) if (e.code == "Space") {
+        if (Bucked == true) vy = -5, grounded = false
+        if (Bucked == false) vy = -7, grounded = false
+    }
 })
 
+  document.addEventListener('keydown', logKey)
+    function logKey(e) {
+      if (`${e.code}` == "KeyS") h = 50, y = canvas.height - 50, ShouldBeh = canvas.height - 50, Bucked = true
+    }
+
+addEventListener("keyup", function(e){
+    if (grounded == true) if (e.code == "KeyS") h = 100, y = canvas.height - 100, ShouldBeh = canvas.height - 100, Bucked = false
+})
