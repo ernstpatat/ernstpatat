@@ -7,9 +7,9 @@ addEventListener("keydown", function(e){
 
   document.addEventListener('keydown', logKey)
     function logKey(e) {
-      if (`${e.code}` == "KeyS") h = 50, Bucked = true
+      if (`${e.code}` == "KeyS") h = 50, Bucked = true, h2 = 50
     }
 
 addEventListener("keyup", function(e){
-    if (grounded == true) if (e.code == "KeyS") h = 100, Bucked = false
+    if (grounded == true) if (e.code == "KeyS") h = 100, Bucked = false, h2 = 0
 })

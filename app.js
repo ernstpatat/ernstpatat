@@ -4,6 +4,7 @@ let x = canvas.width/2
 let y = canvas.height - 100
 let vx = 0
 let vy = 0
+let h2 = 0
 let Bucked = false
 let grounded = false
 let Cactusx = canvas.width
@@ -73,7 +74,7 @@ function update() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
     y += vy
     collision()
-    ctx.fillRect(Cactusx, Cactusy, 50, 50)
+    //ctx.fillRect(Cactusx, Cactusy, 50, 50)
     Meneer.style.left = Cactusx-293+"px"
     Meneer.style.top = Cactusy-455+"px"
     gsm.style.height = h+"px"
@@ -84,12 +85,18 @@ function update() {
     document.getElementById("score").innerHTML = Score
     if (Score >= HighScore) HighScore = Score
     document.getElementById("HighScore").innerHTML = HighScore
+    console.log(x)
     console.log(y)
+    console.log(w)
     console.log(h)
-    if (Cactusx <= x) if (x <= Cactusx + Cactusw) if (Cactusy <= y + h) if (y + h <= Cactusy + Cactush) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, y = canvas.height - 100, document.getElementById("LoseText").innerHTML = "You Lose!", update()
-    if (Cactusx <= x + w) if (x + w <= Cactusx + Cactusw) if (Cactusy <= y + h) if (y + h <= Cactusy + Cactush) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, y = canvas.height - 100, document.getElementById("LoseText").innerHTML = "You Lose!", update()
-    if (Cactusx <= x + w) if (x + w <= Cactusx + Cactusw) if (Cactusy <= y + h) if (y + h <= Cactusy + Cactush) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, y = canvas.height - 100, document.getElementById("LoseText").innerHTML = "You Lose!", update()
-    if (Cactusx <= x) if (x <= Cactusx + w) if (Cactusy <= y + h) if (y + h <= Cactusy + Cactush) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, y = canvas.height - 100, document.getElementById("LoseText").innerHTML = "You Lose!", update()
+    console.log(Cactusx)
+    console.log(Cactusy)
+    console.log(Cactusw)
+    console.log(Cactush)
+    if (x >= Cactusx) if (x <= Cactusx + Cactusw) if (y + h2 >= Cactusy) if (y + h2 <= Cactusy + Cactush) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, y = canvas.height - 100, document.getElementById("LoseText").innerHTML = "You Lose!", update()
+    if (x + w >= Cactusx) if (x + w <= Cactusx + Cactusw) if (y + h2 >= Cactusy) if (y + h2 <= Cactusy + Cactush) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, y = canvas.height - 100, document.getElementById("LoseText").innerHTML = "You Lose!", update()
+    if (x >= Cactusx) if (x <= Cactusx + Cactusw) if (y + h + h2 >= Cactusy) if (y + h + h2 <= Cactusy + Cactush) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, y = canvas.height - 100, document.getElementById("LoseText").innerHTML = "You Lose!", update()
+    if (x + w >= Cactusx) if (x + w <= Cactusx + Cactusw) if (y + h + h2 >= Cactusy) if (y + h + h2 <= Cactusy + Cactush) Cactusx = canvas.width, button1.disabled = false, Dead = true, buttonPause.disabled = true, y = canvas.height - 100, document.getElementById("LoseText").innerHTML = "You Lose!", update()
     Cactusx -= CactusSpeed
     ScoreString = Score.toString()
     if (Score  <= 99) if (Score >= 10) if (ScoreString.charAt(1) == 0) CactusSpeed = parseInt(ScoreString.charAt(0)) + 4
